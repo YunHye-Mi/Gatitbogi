@@ -1,10 +1,14 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
 }
 
 android {
     compileSdk 32
+
+    viewBinding {
+        enabled true
+    }
 
     defaultConfig {
         applicationId "com.example.gatitbogi"
