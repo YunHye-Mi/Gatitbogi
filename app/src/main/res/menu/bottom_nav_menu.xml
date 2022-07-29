@@ -17,6 +17,10 @@
         app:showAsAction="always"
         android:title="구해요" />
     <item
+        android:id="@+id/chatFragment"
+        app:showAsAction="always"
+        android:title="채팅목록" />
+    <item
         android:id="@+id/mypageFragment"
         app:showAsAction="always"
         android:title="마이페이지" />

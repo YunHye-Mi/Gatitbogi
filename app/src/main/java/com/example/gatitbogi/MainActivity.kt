@@ -39,12 +39,21 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
+
                 R.id.recruitFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frm, RecruitFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
+
+                R.id.chatFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, ChatFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+
                 R.id.mypageFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frm, MypageFragment())
