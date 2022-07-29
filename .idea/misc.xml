@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.529" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/all_round.xml" value="0.529" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.529" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/recruit_background.xml" value="0.529" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/font/suit.xml" value="0.3574074074074074" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/font/suit_family.xml" value="0.3574074074074074" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/activity_main.xml" value="0.47282608695652173" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_chat.xml" value="0.5494791666666666" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_home.xml" value="0.25987841945288753" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_mypage.xml" value="0.2669706180344478" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_recruit.xml" value="0.2669706180344478" />
-        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_search.xml" value="0.25987841945288753" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/fragment_search.xml" value="0.46875" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_restaurant.xml" value="0.67" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5405128205128205" />
       </map>
     </option>
