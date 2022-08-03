@@ -2,15 +2,126 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
+        android:id="@+id/recruit_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recruit"
+        android:layout_marginTop="14dp"
+        android:text="구해요"
+        android:textSize="20sp"
+        android:fontFamily="@font/suit_medium"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/recruit_notification_iv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_baseline_notifications_none_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/recruit_none_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="텅텅"
+        android:fontFamily="@font/suit_medium"
+        android:textSize="60sp"
+        android:textColor="#F2F1F1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/recruit_none_upload_recruit_ll"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/round_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/recruit_none_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/recruit_none_upload_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="40dp"
+            android:gravity="center_vertical|center"
+            android:fontFamily="@font/suit_medium"
+            android:textSize="14sp"
+            android:textColor="#6574FF"
+            android:text="빠르게 구해요 올리러 가기"/>
+
+       <ImageView
+            android:id="@+id/recruit_none_upload_iv"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+           android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+    </LinearLayout>
+
+    <!--구해요 채팅방 목록-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recruit_chatting_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/recruit_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_recruit"/>
+
+    <!--상세페이지 보기 & 구해요 올리기 버튼-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@color/rectangle_color"
+        android:gravity="center_horizontal|center_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/recruit_restaurant_detail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginEnd="100dp"
+            android:text="식당 상세페이지 보기"
+            android:textSize="16sp"
+            android:fontFamily="@font/suit_medium"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/recruit_upload_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/upload_recruit"
+            android:textSize="16sp"
+            android:fontFamily="@font/suit_medium"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
