@@ -1,12 +1,12 @@
 package com.example.gatitbogi
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.app.TimePickerDialog
-import android.app.TimePickerDialog.OnTimeSetListener
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
-import android.view.inputmethod.InputMethodManager
+import android.widget.NumberPicker
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gatitbogi.databinding.ActivityUploadRecruitBinding
@@ -48,15 +48,15 @@ class UploadRecruitActivity : AppCompatActivity() {
     //Clicklistener
     private fun onClickListener(){
         binding.uploadRecruitSelectDateIv.setOnClickListener {
-            getDate(binding.uploadRecruitSelectDateTv,this)
+            DatePicker(binding.uploadRecruitSelectDateTv,this)
         }
 
         binding.uploadRecruitSelectTimeIv.setOnClickListener {
-            getTime(binding.uploadRecruitSelectTimeTv,this)
+            TimePicker(binding.uploadRecruitSelectTimeTv,this)
         }
 
         binding.uploadRecruitSelectPersonIv.setOnClickListener {
-            getPerson(binding.uploadRecruitSelectPersonTv, this)
+            PersonnelPicker(binding.uploadRecruitSelectPersonTv, this)
         }
 
         binding.uploadToggleOff.setOnClickListener {
@@ -73,36 +73,99 @@ class UploadRecruitActivity : AppCompatActivity() {
             finish()
         }
     }
+    //PersonPickerDialog
+    private fun PersonnelPicker(textView: TextView, context: Context) {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        val view: View = this.layoutInflater.inflate(R.layout.dialog_personnel, null)
+        builder.setView(view)
 
-    //Dialog
-    private fun getPerson(textView: TextView, context: Context) {
+        val picker = view.findViewById<View>(R.id.dialog_person_picker) as NumberPicker
+        picker.minValue = 2
+        picker.maxValue = 10
+        picker.wrapSelectorWheel = false
 
+        builder.setPositiveButton(
+            R.string.ok,
+            DialogInterface.OnClickListener { dialog, id ->
+                textView.text = picker.value.toString() + "인"
+            })
+            .setNegativeButton(
+                R.string.cancel,
+                DialogInterface.OnClickListener { dialog, id ->
+                })
+        builder.create().show()
     }
 
     //DatePickerDialog
-    private fun getDate(textView: TextView, context: Context){
+    private fun DatePicker(textView: TextView, context: Context){
         val cal = Calendar.getInstance()
 
         val datePickerDialog = DatePickerDialog(context, DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
-                cal.set(Calendar.YEAR, year)
-                cal.set(Calendar.MONTH, month)
-                cal.set(Calendar.DAY_OF_MONTH, day)
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, month)
+            cal.set(Calendar.DAY_OF_MONTH, day)
 
-            textView.text = SimpleDateFormat("yyyy년 M월 dd일").format(cal.timeInMillis)
-            },cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH))
+            textView.text = SimpleDateFormat("yyyy년 M월 d일").format(cal.timeInMillis)
+        },cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH))
         datePickerDialog.show()
+
+
     }
 
     //TimePickerDialog
-    private fun getTime(textView: TextView, context: Context){
-        val cal = Calendar.getInstance()
+    private fun TimePicker(textView: TextView, context: Context){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        val view: View = this.layoutInflater.inflate(R.layout.dialog_time, null)
+        builder.setView(view)
 
-        val timeSetListener = OnTimeSetListener { timePicker, hour, minute ->
-            cal.set(Calendar.HOUR_OF_DAY, hour)
-            cal.set(Calendar.MINUTE, minute)
+        val hour = view.findViewById<View>(R.id.dialog_hour_picker) as NumberPicker
+        val min = view.findViewById<View>(R.id.dialog_minute_picker) as NumberPicker
+        val am_pm = view.findViewById<View>(R.id.dialog_am_pm_picker) as NumberPicker
 
-            textView.text = SimpleDateFormat("aa hh:mm").format(cal.time)
-        }
-        TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE),false).show()
+        hour.minValue = 1
+        hour.maxValue = 12
+        hour.wrapSelectorWheel = true
+
+        min.minValue = 0
+        min.maxValue = 5
+        min.displayedValues = arrayOf("00", "10", "20", "30", "40", "50")
+        min.wrapSelectorWheel = true
+
+        am_pm.minValue = 0
+        am_pm.maxValue = 1
+        am_pm.displayedValues = arrayOf("오전", "오후")
+        am_pm.wrapSelectorWheel = false
+
+        builder.setPositiveButton(
+            R.string.ok,
+            DialogInterface.OnClickListener { dialog, id ->
+                when(am_pm.value){
+                    0 -> {
+                        when(min.value){
+                            0 -> textView.text = "오전 " + hour.value.toString() + "시"
+                            1 -> textView.text = "오전 " + hour.value.toString() + "시 " + "10분"
+                            2 -> textView.text = "오전 " + hour.value.toString() + "시 " + "20분"
+                            3 -> textView.text = "오전 " + hour.value.toString() + "시 " + "30분"
+                            4 -> textView.text = "오전 " + hour.value.toString() + "시 " + "40분"
+                            else -> textView.text = "오전 " + hour.value.toString() + "시 " + "50분"
+                        }
+                    }
+                    else -> {
+                        when(min.value){
+                            0 -> textView.text = "오후 " + hour.value.toString() + "시"
+                            1 -> textView.text = "오후 " + hour.value.toString() + "시 " + "10분"
+                            2 -> textView.text = "오후 " + hour.value.toString() + "시 " + "20분"
+                            3 -> textView.text = "오후 " + hour.value.toString() + "시 " + "30분"
+                            4 -> textView.text = "오후 " + hour.value.toString() + "시 " + "40분"
+                            else -> textView.text = "오후 " + hour.value.toString() + "시 " + "50분"
+                        }
+                    }
+                }
+            })
+            .setNegativeButton(
+                R.string.cancel,
+                DialogInterface.OnClickListener { dialog, id ->
+                })
+        builder.create().show()
     }
 }
