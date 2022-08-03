@@ -5,18 +5,30 @@
     android:layout_marginBottom="25dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <View
+        android:id="@+id/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <LinearLayout
         android:id="@+id/item_recruit_ll"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="16dp"
         android:background="@drawable/gray_round"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/item_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="14dp"
             android:layout_marginStart="14dp"
             app:cardCornerRadius="15dp">
@@ -33,7 +45,7 @@
                 android:text="충무로 김치 찌개"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="bottom|center"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FFFFFF"
                 android:fontFamily="@font/suit_bold"/>
 
@@ -49,109 +61,118 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="30dp"
                 android:text="김치찌개 조지는 팟"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textColor="#000000"
                 android:fontFamily="@font/suit_bold"/>
 
             <LinearLayout
+                android:id="@+id/item_personnel_ll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="인원: 4인~6인"
-                    android:textColor="#000000"
-                    android:fontFamily="@font/suit_medium"
-                    android:textSize="16sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_outline_group_24"/>
+                    <TextView
+                        android:id="@+id/item_personnel_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:text="인원: 4인"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/suit_medium"
+                        android:textSize="12sp"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="날짜: 2022-07-16"
-                    android:textColor="#000000"
-                    android:fontFamily="@font/suit_medium"
-                    android:textSize="16sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_outline_calendar_today_24"/>
+                    <TextView
+                        android:id="@+id/item_date_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:text="날짜: 2022-07-16"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/suit_medium"
+                        android:textSize="12sp"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간: 오후 1시 희망"
-                    android:textColor="#000000"
-                    android:fontFamily="@font/suit_medium"
-                    android:textSize="16sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_outline_update_24"/>
+                    <TextView
+                        android:id="@+id/item_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:text="시간: 오후 12시 희망"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/suit_medium"
+                        android:textSize="12sp"/>
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/item_radius_ll"
-                android:layout_width="84dp"
-                android:layout_height="20dp"
+                android:layout_width="49dp"
+                android:layout_height="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/gray_round_stroke"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16.5dp"
                 android:gravity="center_vertical|center_horizontal"
-                app:layout_constraintEnd_toEndOf="@id/item_restaurant_cv">
-
+                android:background="@drawable/gray_round_stroke">
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_outline_more_time_24"/>
-
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_outline_man_24"/>
                 <TextView
-                    android:id="@+id/item_radius_tv"
                     android:layout_width="wrap_content"
-                    android:layout_height="14dp"
-                    android:layout_marginStart="2dp"
-                    android:gravity="fill"
-                    android:text="500M 이내"
-                    android:lineSpacingExtra="2sp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="1dp"
+                    android:gravity="center_vertical"
+                    android:text="남성만"
+                    android:textSize="10sp"
                     android:fontFamily="@font/suit_regular"
-                    android:textColor="#000000"
-                    android:textSize="12sp"/>
-
+                    android:textColor="#000000"/>
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/item_number_of_recruit"
-        android:layout_width="135dp"
-        android:layout_height="24dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="-9dp"
-        android:layout_marginEnd="14dp"
+    <TextView
+        android:id="@+id/item_chat_personnel"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
         android:gravity="center_vertical|center_horizontal"
-        android:background="@drawable/primary_color_round"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_recruit_ll">
-        <ImageView
-            android:layout_height="16dp"
-            android:layout_width="16dp"
-            android:viewportWidth="16"
-            android:viewportHeight="16"
-            android:src="@drawable/ic_outline_person_24"
-            app:tint="@color/white" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:text="채팅방 참여"
-            android:lineSpacingExtra="-4sp"
-            android:textAppearance="@style/body_appearance1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:text="4/2"
-            android:textAppearance="@style/body_appearance1"
-            android:lineSpacingExtra="-4sp"
-            android:gravity="center_horizontal|center_vertical"/>
-    </LinearLayout>
+        android:text="채팅방 참여 4/2"
+        android:textColor="@color/theme_color"
+        android:textSize="14sp"
+        android:fontFamily="@font/suit_medium"
+        android:background="@drawable/round_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/item_recruit_ll"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

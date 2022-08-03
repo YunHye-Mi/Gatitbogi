@@ -8,154 +8,424 @@
 
     <ImageView
         android:id="@+id/upload_recruit_back_iv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:scaleType="center"
         android:src="@drawable/ic_outline_arrow_back_ios_24"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/upload_recruit_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="구해요 작성"
-        android:textSize="20sp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/suit_medium"
+        android:gravity="center_vertical"
+        android:text="구해요 등록"
         android:textColor="#000000"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/upload_recruit_ll"
+    <View
+        android:id="@+id/upload_line"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="2dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/upload_recruit_tv" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/upload_recruit_tv"
-        app:layout_constraintBottom_toTopOf="@id/upload_recruit_btn_tv"
+        app:layout_constraintBottom_toTopOf="@+id/upload_recruit_inactive_btn_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/upload_line">
 
-        <TextView
-            android:id="@+id/upload_recruit_title_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="그룹 이름 작성"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_bold"/>
-
-        <TextView
-            android:id="@+id/upload_recruit_title_edit_tv"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:hint="그룹 이름을 작성해주세요"
-            android:fontFamily="@font/suit_medium"
-            android:textSize="16sp"
-            android:lines="1"/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/upload_recruit_date_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="날짜를 선택해주세요"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_bold"/>
+            <LinearLayout
+                android:id="@+id/upload_recruit_title"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/upload_recruit_select_date_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:text="2022.06.04"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_medium"/>
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_outline_arrow_circle_right_24"
+                    app:tint="#797979" />
 
-        <TextView
-            android:id="@+id/upload_recruit_time_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="시간을 선택해주세요"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_bold"/>
+                <TextView
+                    android:id="@+id/upload_recruit_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/suit_bold"
+                    android:text="1단계: 구해요 제목 짓기"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/upload_recruit_select_time_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:text="PM 12시 10분"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_medium"/>
+            <LinearLayout
+                android:id="@+id/upload_recruit_title_ll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/round_stroke"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_title">
 
-        <TextView
-            android:id="@+id/upload_recruit_person_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="인원을 선택해주세요"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_bold"/>
+                <EditText
+                    android:id="@+id/upload_recruit_title_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:fontFamily="@font/suit_medium"
+                    android:gravity="start|center_vertical"
+                    android:hint="구해요 제목 ex)맛있는 치킨 먹기 모임"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textColorHint="#797979"
+                    android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/upload_recruit_select_person_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:text="3인"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_medium"/>
+                <ImageView
+                    android:id="@+id/upload_recruit_title_empty_iv"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_outline_check_circle_24"
+                    app:tint="#F2F1F1" />
 
-        <TextView
-            android:id="@+id/upload_recruit_other_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="기타 문구 작성"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_bold"/>
+                <ImageView
+                    android:id="@+id/upload_recruit_title_iv"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_outline_check_circle_24"
+                    android:visibility="gone"
+                    app:tint="#6574FF" />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/upload_recruit_other_edit_tv"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:hint="50자 이내"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:fontFamily="@font/suit_medium"/>
+            <View
+                android:id="@+id/upload_line1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_title_ll" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/upload_recruit_date"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_line1">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_outline_arrow_circle_right_24"
+                    app:tint="#797979" />
+
+                <TextView
+                    android:id="@+id/upload_recruit_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/suit_bold"
+                    android:text="2단계: 구해요 날짜 정하기"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_date_ll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/round_stroke"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_date">
+
+                <TextView
+                    android:id="@+id/upload_recruit_select_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/suit_medium"
+                    android:gravity="center_vertical"
+                    android:hint="선택해주세요"
+                    android:textColor="#797979"
+                    android:textColorHint="#797979"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/upload_recruit_select_date_iv"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_outline_calendar_month_24"
+                    app:tint="#797979" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/upload_line2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_date_ll" />
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_time"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_line2">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_outline_arrow_circle_right_24"
+                    app:tint="#797979" />
+
+                <TextView
+                    android:id="@+id/upload_recruit_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/suit_bold"
+                    android:text="3단계: 구해요 시간 정하기"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_time_ll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/round_stroke"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_time">
+
+                <TextView
+                    android:id="@+id/upload_recruit_select_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/suit_medium"
+                    android:gravity="center_vertical"
+                    android:hint="선택해주세요"
+                    android:textColor="#797979"
+                    android:textColorHint="#797979"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/upload_recruit_select_time_iv"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_outline_access_time_24"
+                    app:tint="#797979" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/upload_line3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_time_ll" />
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_person"
+                android:layout_width="match_parent"
+                android:layout_height="17dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/upload_line3">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_outline_arrow_circle_right_24"
+                    app:tint="#797979" />
+
+                <TextView
+                    android:id="@+id/upload_recruit_person_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/suit_bold"
+                    android:text="4단계: 희망 인원 정하기"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_person_ll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/round_stroke"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_person">
+
+                <TextView
+                    android:id="@+id/upload_recruit_select_person_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/suit_medium"
+                    android:gravity="center_vertical"
+                    android:hint="선택해주세요"
+                    android:textColor="#797979"
+                    android:textColorHint="#797979"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/upload_recruit_select_person_iv"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_outline_group_24"
+                    app:tint="#797979" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/upload_line4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_person_ll" />
+
+            <LinearLayout
+                android:id="@+id/upload_recruit_gender_ll"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_line4">
+
+                <ImageView
+                    android:id="@+id/upload_toggle_off"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_outline_toggle_off_24"
+                    app:tint="#797979" />
+
+                <ImageView
+                    android:id="@+id/upload_toggle_on"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_outline_toggle_on_24"
+                    android:visibility="gone"
+                    app:tint="#797979" />
+
+                <TextView
+                    android:id="@+id/upload_recruit_gender_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/suit_medium"
+                    android:text="선택 사항 (성별 제한)"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/upload_line5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/upload_recruit_gender_ll" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <!--구해요 올리기 버튼-->
     <TextView
-        android:id="@+id/upload_recruit_btn_tv"
+        android:id="@+id/upload_recruit_inactive_btn_tv"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/rectangle_color"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="구해요 등록하기"
-        android:textSize="16sp"
+        android:layout_height="41dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/round_rectangle"
         android:fontFamily="@font/suit_medium"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineSpacingExtra="-3sp"
+        android:text="구해요 등록하기"
+        android:textColor="#797979"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/upload_recruit_active_btn_tv"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/primary_color_rectangle"
+        android:fontFamily="@font/suit_medium"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineSpacingExtra="-3sp"
+        android:text="구해요 등록하기"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

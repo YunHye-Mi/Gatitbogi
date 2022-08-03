@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gatitbogi">
         <activity
-            android:name=".RecruitDetail_Activity"
-            android:exported="false" />
-        <activity
             android:name=".UploadRecruitActivity"
             android:exported="false" />
         <activity
@@ -20,8 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".SearchActivity"
-            android:exported="false"
-            android:windowSoftInputMode="stateVisible">
+            android:exported="false">
             <!--<intent-filter>
                 <action android:name="android.intent.action.SEARCH"></action>
             </intent-filter>

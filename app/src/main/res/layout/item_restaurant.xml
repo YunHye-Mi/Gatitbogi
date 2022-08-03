@@ -118,12 +118,12 @@
         <ImageView
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:src="@drawable/ic_outline_more_time_24"/>
+            android:src="@drawable/ic_outline_location_on_24"/>
 
         <TextView
             android:id="@+id/item_radius_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_marginStart="2.75dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="500M 이내"

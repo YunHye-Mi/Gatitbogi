@@ -29,7 +29,7 @@ class SearchFragment : Fragment() {
     }
 
     fun onClickListener(){
-        binding.searchIv.setOnClickListener {
+        binding.searchTv.setOnClickListener {
             val intent = Intent(this.context, SearchActivity::class.java)
             startActivity(intent)
         }
