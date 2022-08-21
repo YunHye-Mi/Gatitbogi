@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gatitbogi.databinding.ActivitySearchBinding
 import com.google.gson.Gson
 
-
 class SearchActivity : AppCompatActivity() {
     lateinit var binding: ActivitySearchBinding
     lateinit var searchDB: RecruitDatabase
