@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/white"/>
+    <item>
+        <!--임의로 해놓은 이미지-->
+        <bitmap android:src="@drawable/ic_icon_home"
+            android:gravity="center"/>
+    </item>
+</layer-list>

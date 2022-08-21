@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".MainActivity"
+    android:gravity="bottom"
+    app:umanoDragView="@id/slide_layout"
+    app:umanoOverlay="true"
+    app:umanoPanelHeight="60dp">
 
-
-    <fragment android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        android:name="com.naver.maps.map.MapFragment" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_sliding_panel"
+        android:id="@+id/back_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
+        android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout> <!--하단 슬라이드 부분-->
+        <fragment android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            android:name="com.naver.maps.map.MapFragment"
+            android:layout_marginTop="50dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_background"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_slide_home"
+            android:layout_marginTop="15dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

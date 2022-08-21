@@ -12,7 +12,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/rectangle_color</item>
         <!-- Customize your theme here. -->
-        <item name="android:timePickerStyle">@style/TimePickerDialog</item>
+        <item name="android:datePickerStyle">@style/DatePickerStyle</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
     <!--text_appearance-->
@@ -46,8 +50,14 @@
         <item name="android:textColor">#000000</item>
     </style>
 
-    <!--TimePickerDialog-->
-    <style name="TimePickerDialog" parent="android:Widget.Material.Light.TimePicker">
-        <item name="android:timePickerMode">spinner</item>
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/suit_medium</item>
+        <item name="colorControlNormal">@color/theme_color</item>
+    </style>
+
+    <style name="DatePickerStyle"  parent="android:Widget.Material.Light.DatePicker">
+        <item name="android:datePickerDialogTheme">@color/theme_color</item>
+        <item name="android:fontFamily">@font/suit_regular</item>
     </style>
 </resources>

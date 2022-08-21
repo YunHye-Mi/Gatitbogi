@@ -2,94 +2,122 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-    <!--검색어 입력창-->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_sv"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/search_back_iv"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_outline_arrow_back_ios_24"
+        android:scaleType="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--검색어 입력창-->
+    <EditText
+        android:id="@+id/search_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        android:paddingStart="12dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:drawableTint="@color/theme_color"
         android:background="@drawable/round_rectangle"
+        android:fontFamily="@font/suit_medium"
         android:gravity="center_vertical"
         android:inputType="text"
-        android:focusable="auto"
-        app:searchHintIcon="@color/transparent"
+        android:textColor="@color/black"
+        android:hint="@string/search"
+        android:textColorHint="#797979"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:imeOptions="actionSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search_back_iv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/search_delete_et_iv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_close_24"
+        android:scaleType="center"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--검색어 입력 시 추천어-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/search_et"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </androidx.appcompat.widget.SearchView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_search_filter"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/search_et"/>
 
-    <!--검색 아이콘 이미지-->
-
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="20dp"
         android:scrollIndicators="none"
-        app:layout_constraintTop_toBottomOf="@+id/search_sv"
+        app:layout_constraintTop_toBottomOf="@+id/search_et"
         app:layout_constraintBottom_toBottomOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!--인기검색어-->
-            <TextView
-                android:id="@+id/search_popular_tv"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="인기 검색어"
-                android:textAppearance="@style/intermediate_title_appearance"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <!--인기 검색어 리스트-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/search_popular_rv"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:isScrollContainer="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/search_popular_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:listitem="@layout/item_popular_search">
-            </androidx.recyclerview.widget.RecyclerView>
-
             <!--최근 검색어-->
             <TextView
                 android:id="@+id/search_recent_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="100dp"
                 android:layout_alignParentTop="true"
                 android:text="최근 검색어"
                 android:textAppearance="@style/intermediate_title_appearance"
-                android:gravity="top"
-                app:layout_constraintTop_toBottomOf="@id/search_popular_tv"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/search_recent_delete_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="19dp"
                 android:layout_marginBottom="4dp"
-                android:text="전체삭제"
+                android:text="최근 검색어 모두 지우기"
                 android:textSize="12sp"
                 android:textColor="#000000"
                 android:fontFamily="@font/suit_regular"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/search_recent_rv"/>
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="#D9D9D9"
+                app:layout_constraintStart_toEndOf="@id/search_recent_delete_tv"
                 app:layout_constraintBottom_toTopOf="@id/search_recent_rv"/>
 
             <!--최근 검색어 리스트-->
@@ -99,11 +127,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/search_recent_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_recent_tv"
                 tools:listitem="@layout/item_recent_search" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upload_recruit_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UploadRecruitActivity">
@@ -38,13 +39,14 @@
         app:layout_constraintTop_toBottomOf="@id/upload_recruit_tv" />
 
     <ScrollView
+        android:id="@+id/upload_recruit_sv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/upload_recruit_inactive_btn_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_line">
+        app:layout_constraintTop_toBottomOf="@id/upload_line"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -100,21 +102,15 @@
                     android:layout_marginBottom="25dp"
                     android:layout_weight="1"
                     android:background="@null"
+                    android:focusableInTouchMode="true"
                     android:fontFamily="@font/suit_medium"
                     android:gravity="start|center_vertical"
                     android:hint="구해요 제목 ex)맛있는 치킨 먹기 모임"
+                    android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:textColor="#000000"
                     android:textColorHint="#797979"
                     android:textSize="12sp" />
-
-                <ImageView
-                    android:id="@+id/upload_recruit_title_empty_iv"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:scaleType="center"
-                    android:src="@drawable/ic_outline_check_circle_24"
-                    app:tint="#F2F1F1" />
 
                 <ImageView
                     android:id="@+id/upload_recruit_title_iv"
@@ -122,8 +118,8 @@
                     android:layout_height="48dp"
                     android:scaleType="center"
                     android:src="@drawable/ic_outline_check_circle_24"
-                    android:visibility="gone"
-                    app:tint="#6574FF" />
+                    app:tint="#F2F1F1" />
+
             </LinearLayout>
 
             <View
@@ -393,39 +389,35 @@
     </ScrollView>
 
     <!--구해요 올리기 버튼-->
-    <TextView
-        android:id="@+id/upload_recruit_inactive_btn_tv"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/upload_recruit_btn_cv"
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/round_rectangle"
-        android:fontFamily="@font/suit_medium"
-        android:gravity="center_vertical|center_horizontal"
-        android:lineSpacingExtra="-3sp"
-        android:text="구해요 등록하기"
-        android:textColor="#797979"
-        android:textSize="14sp"
+        android:layout_marginBottom="28dp"
+        android:outlineSpotShadowColor="@color/transparent"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/upload_recruit_active_btn_tv"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/primary_color_rectangle"
-        android:fontFamily="@font/suit_medium"
-        android:gravity="center_vertical|center_horizontal"
-        android:lineSpacingExtra="-3sp"
-        android:text="구해요 등록하기"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/upload_recruit_btn_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/rectangle_color"/>
+
+        <TextView
+            android:id="@+id/upload_recruit_btn_tv"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:fontFamily="@font/suit_medium"
+            android:lineSpacingExtra="-3sp"
+            android:text="구해요 등록하기"
+            android:textColor="#797979"
+            android:textSize="14sp"/>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
