@@ -45,6 +45,10 @@ class SearchResultActivity : AppCompatActivity() {
         binding.searchResultAlignLl.setOnClickListener {
             pickAlign(binding.searchResultAlignWayTv, this)
         }
+
+        binding.searchResultAlignLl.setOnClickListener {
+            pickAlign(binding.searchResultAlignWayTv, this)
+        }
     }
 
     override fun onStart() {
@@ -87,4 +91,6 @@ class SearchResultActivity : AppCompatActivity() {
             }).show()
         Log.d("Align_way", textView.text.toString())
     }
+
+
 }

@@ -4,17 +4,12 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
-import android.content.Intent
 import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
-import android.view.GestureDetector
-import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.NumberPicker
@@ -93,8 +88,16 @@ class UploadRecruitActivity : AppCompatActivity() {
                     binding.uploadRecruitTitleIv.setColorFilter(Color.parseColor("#F2F1F1"))
                 }
             }
+            else {
+                binding.uploadRecruitBtnTv.setTextColor(Color.parseColor("#797979"))
+                binding.uploadRecruitBtnIv.setBackgroundColor(Color.parseColor("#F2F1F1"))
+                binding.uploadRecruitBtnCv.setOnClickListener {
+                    binding.uploadRecruitBtnTv.setTextColor(Color.parseColor("#797979"))
+                    binding.uploadRecruitBtnIv.setBackgroundColor(Color.parseColor("#F2F1F1"))
+                    Toast.makeText(this,"아직 작성되지 않은 부분이 있어요 😅", Toast.LENGTH_LONG).show()
+                }
+            }
         }
-
     }
 
     // 모든 TextView를 작성
