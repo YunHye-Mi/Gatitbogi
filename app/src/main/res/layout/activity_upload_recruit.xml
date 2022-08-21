@@ -179,7 +179,7 @@
                     android:fontFamily="@font/suit_medium"
                     android:gravity="center_vertical"
                     android:hint="선택해주세요"
-                    android:textColor="#000000"
+                    android:textColor="#797979"
                     android:textColorHint="#797979"
                     android:textSize="12sp" />
 
@@ -248,7 +248,7 @@
                     android:fontFamily="@font/suit_medium"
                     android:gravity="center_vertical"
                     android:hint="선택해주세요"
-                    android:textColor="#000000"
+                    android:textColor="#797979"
                     android:textColorHint="#797979"
                     android:textSize="12sp" />
 
@@ -319,7 +319,7 @@
                     android:fontFamily="@font/suit_medium"
                     android:gravity="center_vertical"
                     android:hint="선택해주세요"
-                    android:textColor="#000000"
+                    android:textColor="#797979"
                     android:textColorHint="#797979"
                     android:textSize="12sp" />
 
