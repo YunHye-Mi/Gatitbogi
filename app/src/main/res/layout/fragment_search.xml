@@ -10,104 +10,300 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:paddingStart="12dp"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:drawableTint="@color/theme_color"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/search"
+        android:fontFamily="@font/suit_medium"
+        android:textColor="#797979"
+        android:textSize="14sp"
         android:background="@drawable/round_rectangle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
-        android:id="@+id/search_ic_iv"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:scaleType="center"
-        android:src="@drawable/ic_baseline_search_24"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- 카테고리 -->
-    <TextView
-        android:id="@+id/search_popular_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:text="카테고리"
-        android:textAppearance="@style/intermediate_title_appearance"
-        app:layout_constraintTop_toBottomOf="@+id/search_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <!--카테고리 리스트-->
-    <LinearLayout
-        android:id="@+id/search_category_ll"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_popular_tv">
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/search_tv"/>
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
-
-    </LinearLayout>
-
-    <!--이번 점심 여기 어때요?-->
-    <TextView
-        android:id="@+id/search_recent_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:text="이번 점심 여기 어때요?"
-        android:textAppearance="@style/intermediate_title_appearance"
-        android:gravity="top"
-        app:layout_constraintTop_toBottomOf="@id/search_category_ll"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!--추천 식당 리스트-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_lunch_rv"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:nestedScrollingEnabled="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/search_recent_tv"
+        android:scrollbarSize="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_restaurant" />
+        app:layout_constraintTop_toBottomOf="@id/search_tv">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- 카테고리 -->
+            <TextView
+                android:id="@+id/search_popular_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="카테고리"
+                android:textAppearance="@style/intermediate_title_appearance"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!--카테고리 리스트-->
+            <HorizontalScrollView
+                android:id="@+id/search_category_ll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:scrollbarFadeDuration="@null"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_popular_tv">
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:rowCount="1">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_korean_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_korean_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_korean_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="한식"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_western_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        android:outlineAmbientShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_western_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_western_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="양식"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_asian_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_asian_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_asian_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="아시아\n음식"
+                            android:textSize="12sp"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_japanese_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_japanese_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_japanese_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="일식"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_chinese_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_chinese_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_chinese_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="중식"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_flour_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_flour_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_flour_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="분식"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_cafe_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_cafe_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_cafe_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="카페"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_buffet_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_buffet_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_buffet_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="뷔페"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search_category_other_cv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:outlineSpotShadowColor="@color/transparent"
+                        app:cardCornerRadius="50dp">
+                        <ImageView
+                            android:id="@+id/search_category_other_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="#9A000000"/>
+                        <TextView
+                            android:id="@+id/search_category_other_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="기타"
+                            android:textColor="#FFFFFF"
+                            android:textAppearance="@style/intermediate_title_appearance"/>
+                    </androidx.cardview.widget.CardView>
+                </GridLayout>
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/rectangle_color"
+                app:layout_constraintTop_toBottomOf="@id/search_category_ll"/>
+
+            <!--이번 점심 여기 어때요?-->
+            <TextView
+                android:id="@+id/search_recent_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:text="이번 점심 여기 어때요?"
+                android:textAppearance="@style/intermediate_title_appearance"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/search_category_ll"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!--추천 식당 리스트-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_lunch_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:nestedScrollingEnabled="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/search_recent_tv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/item_restaurant_result" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

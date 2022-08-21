@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_recruit"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -77,51 +78,27 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/recruit_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="14dp"
+        android:visibility="gone"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/recruit_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <!--구해요 채팅방 목록-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recruit_chatting_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginBottom="50dp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/recruit_tv"
+        app:layout_constraintTop_toBottomOf="@id/recruit_line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_recruit"/>
-
-    <!--상세페이지 보기 & 구해요 올리기 버튼-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:background="@color/rectangle_color"
-        android:gravity="center_horizontal|center_vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:id="@+id/recruit_restaurant_detail_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginEnd="100dp"
-            android:text="식당 상세페이지 보기"
-            android:textSize="16sp"
-            android:fontFamily="@font/suit_medium"
-            android:textColor="#000000"/>
-
-        <TextView
-            android:id="@+id/recruit_upload_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="@string/upload_recruit"
-            android:textSize="16sp"
-            android:fontFamily="@font/suit_medium"
-            android:textColor="#000000"/>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

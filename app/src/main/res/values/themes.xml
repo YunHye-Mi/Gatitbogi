@@ -15,6 +15,10 @@
         <item name="android:datePickerStyle">@style/DatePickerStyle</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
     <!--text_appearance-->
     <style name="intermediate_title_appearance"> <!--카테고리, 인기 검색어 등 중제목 외양-->
         <item name="android:textSize">16sp</item>

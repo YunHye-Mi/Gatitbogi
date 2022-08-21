@@ -10,53 +10,107 @@
         android:id="@+id/search_result_back_iv"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:scaleType="center"
+        android:layout_marginTop="14dp"
         android:src="@drawable/ic_outline_arrow_back_ios_24"
+        android:scaleType="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <!--검색어 입력창-->
     <TextView
         android:id="@+id/search_result_tv"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginEnd="16dp"
-        android:paddingStart="55dp"
+        android:layout_marginTop="14dp"
+        android:drawablePadding="12dp"
+        android:drawableTint="@color/theme_color"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
         android:background="@drawable/round_rectangle"
+        android:fontFamily="@font/suit_medium"
         android:gravity="center_vertical"
-        android:text="김치찌개"
-        app:layout_constraintTop_toBottomOf="@id/search_result_back_iv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:paddingStart="12dp"
+        android:text="@string/search"
+        android:textColor="#797979"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:imeOptions="actionSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_result_back_iv"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/search_result_ic_iv"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:scaleType="center"
-        android:src="@drawable/ic_baseline_search_24"
-        app:layout_constraintTop_toBottomOf="@id/search_result_back_iv"
-        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/search_result_tv"/>
 
     <!--검색 결과 건수-->
     <TextView
         android:id="@+id/search_result_count_tv"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
         android:layout_marginStart="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:text="김치찌개 검색 결과(6건)"
+        android:layout_marginTop="40dp"
+        android:text="김치찌개 검색 결과 (6건)"
         android:textAppearance="@style/intermediate_title_appearance"
-        android:gravity="top"
         app:layout_constraintTop_toBottomOf="@id/search_result_tv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/search_result_count_tv"/>
+
+    <TextView
+        android:id="@+id/search_result_align_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="16dp"
+        android:text="정렬"
+        android:textColor="#797979"
+        android:textSize="14sp"
+        android:fontFamily="@font/suit_medium"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/search_result_count_tv"/>
+
+    <LinearLayout
+        android:id="@+id/search_result_align_ll"
+        android:layout_width="95dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/gray_round"
+        app:layout_constraintStart_toEndOf="@id/search_result_align_tv"
+        app:layout_constraintTop_toBottomOf="@id/search_result_count_tv">
+        <TextView
+            android:id="@+id/search_result_align_way_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기순"
+            android:textColor="#797979"
+            android:textSize="14sp"
+            android:fontFamily="@font/suit_medium"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_outline_keyboard_arrow_down_24"
+            android:scaleType="center"
+            app:tint="#797979" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_result_rv"
@@ -67,7 +121,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/search_result_count_tv"
+        app:layout_constraintTop_toBottomOf="@id/search_result_align_ll"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_restaurant_result" />
 

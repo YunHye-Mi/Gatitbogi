@@ -2,27 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="25dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <View
-        android:id="@+id/item_line"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/rectangle_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
         android:id="@+id/item_recruit_ll"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/gray_round"
-        app:layout_constraintTop_toBottomOf="@id/item_line"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -31,6 +21,7 @@
             android:layout_height="120dp"
             android:layout_marginTop="14dp"
             android:layout_marginStart="14dp"
+            android:outlineSpotShadowColor="@color/transparent"
             app:cardCornerRadius="15dp">
 
             <ImageView
@@ -40,6 +31,7 @@
                 android:background="#949494"/>
 
             <TextView
+                android:id="@+id/item_restaurant_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="충무로 김치 찌개"
@@ -59,11 +51,12 @@
             android:layout_marginStart="16dp">
 
             <TextView
+                android:id="@+id/item_recruit_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="25dp"
                 android:text="김치찌개 조지는 팟"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textColor="#000000"
                 android:fontFamily="@font/suit_bold"/>
 
@@ -79,8 +72,8 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/ic_outline_group_24"/>
                     <TextView
                         android:id="@+id/item_personnel_tv"
@@ -90,7 +83,7 @@
                         android:text="인원: 4인"
                         android:textColor="#000000"
                         android:fontFamily="@font/suit_medium"
-                        android:textSize="12sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,8 +92,8 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/ic_outline_calendar_today_24"/>
                     <TextView
                         android:id="@+id/item_date_tv"
@@ -110,7 +103,7 @@
                         android:text="날짜: 2022-07-16"
                         android:textColor="#000000"
                         android:fontFamily="@font/suit_medium"
-                        android:textSize="12sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,8 +112,8 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/ic_outline_update_24"/>
                     <TextView
                         android:id="@+id/item_time_tv"
@@ -130,30 +123,33 @@
                         android:text="시간: 오후 12시 희망"
                         android:textColor="#000000"
                         android:fontFamily="@font/suit_medium"
-                        android:textSize="12sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="49dp"
+                android:id="@+id/item_gender_ll"
+                android:layout_width="56dp"
                 android:layout_height="16dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="16.5dp"
+                android:layout_marginTop="11.5dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:background="@drawable/gray_round_stroke">
                 <ImageView
+                    android:id="@+id/item_gender_iv"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_outline_man_24"/>
                 <TextView
+                    android:id="@+id/item_gender_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="12dp"
                     android:layout_marginStart="1dp"
                     android:gravity="center_vertical"
                     android:text="남성만"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:fontFamily="@font/suit_regular"
                     android:textColor="#000000"/>
             </LinearLayout>
@@ -162,7 +158,7 @@
 
     </LinearLayout>
     <TextView
-        android:id="@+id/item_chat_personnel"
+        android:id="@+id/item_participate_chatting"
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:layout_marginTop="10dp"
@@ -174,5 +170,15 @@
         android:fontFamily="@font/suit_medium"
         android:background="@drawable/round_rectangle"
         app:layout_constraintTop_toBottomOf="@id/item_recruit_ll"/>
+
+    <View
+        android:id="@+id/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/rectangle_color"
+        app:layout_constraintTop_toBottomOf="@id/item_participate_chatting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

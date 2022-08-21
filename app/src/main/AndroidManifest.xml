@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gatitbogi">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -10,30 +13,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gatitbogi">
         <activity
-            android:name=".UploadRecruitActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SearchResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SearchActivity"
-            android:exported="false">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.SEARCH"></action>
-            </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>-->
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".UploadRecruitActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SearchResultActivity"
+            android:exported="false">
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".SearchActivity"/>
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="xs2066fnwg" />
