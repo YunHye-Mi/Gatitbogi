@@ -7,7 +7,7 @@ import java.util.ArrayList
 
 @Dao
 interface RestaurantDao {
-    @Query("SELECT * FROM RecruitTable")
+    @Query("SELECT * FROM RestaurantTable")
     fun getRestaurant(): List<Restaurant>
 
     @Query("SELECT * FROM RestaurantTable ORDER BY distance")
