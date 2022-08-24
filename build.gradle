@@ -2,9 +2,6 @@
 buildscript {
     repositories {
         google()
-        jcenter()
-
-        maven {url 'https://devrepo.kakao.com/nexus/content/groups/public/'}
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.13'
@@ -12,11 +9,10 @@ buildscript {
 }
 
 plugins {
-    id 'com.android.application' version '7.2.1' apply false
-    id 'com.android.library' version '7.2.1' apply false
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
 }
-
 
 task clean(type: Delete) {
     delete rootProject.buildDir

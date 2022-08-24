@@ -6,7 +6,6 @@
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.529" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/all_round.xml" value="0.529" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/bottom_round.xml" value="0.529" />
-        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/gray_circle.xml" value="0.4795" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/gray_round.xml" value="0.529" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/gray_round_stroke.xml" value="0.529" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.529" />
@@ -20,7 +19,6 @@
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/drawable/white_circle.xml" value="0.529" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/font/suit.xml" value="0.3574074074074074" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/font/suit_family.xml" value="0.3574074074074074" />
-        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/activity_login.xml" value="0.4134963768115942" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/activity_main.xml" value="0.47282608695652173" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/activity_recruit_detail.xml" value="0.43739635157545603" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/activity_search.xml" value="0.3626473254759746" />
@@ -38,8 +36,7 @@
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_recent_search.xml" value="0.4510474561778538" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_recruit.xml" value="0.5" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_restaurant.xml" value="0.4510474561778538" />
-        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_restaurant_recruit.xml" value="0.5494791666666666" />
-        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_restaurant_result.xml" value="0.5" />
+        <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/layout/item_restaurant_result.xml" value="0.25480974775545107" />
         <entry key="..\:/Users/Yun Hye-mi/Gatitbogi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5405128205128205" />
         <entry key="..\:/Users/gnar6/AndroidStudioProjects/Gatitbogi/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/gnar6/AndroidStudioProjects/Gatitbogi/app/src/main/res/layout/fragment_home.xml" value="0.1" />
