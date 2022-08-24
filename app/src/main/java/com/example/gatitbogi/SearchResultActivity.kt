@@ -28,6 +28,18 @@ class SearchResultActivity : AppCompatActivity() {
 
         var intent = getIntent()
 
+        resultDatas.apply{
+            add(
+                Restaurant(R.drawable.ic_alarm_home,"풍성집","한식", 4.06F,
+                    "숙성한우 등심(국내산.전남)180g, 칼로써는 차돌박이(국내산)180g,...", "...", 500, 24, 2)
+            )
+
+            add(
+                Restaurant(R.drawable.ic_alarm_home,"도야집","한식", 4.76F,
+                    "도야집 시그니처 세트, 목살, 뼈오겹살, 삼겹살, 가브리껍살,...", "...", 500, 28, 3)
+            )
+        }
+
         resultDB = RecruitDatabase.getInstance(this)!!
 
 
@@ -57,7 +69,7 @@ class SearchResultActivity : AppCompatActivity() {
     }
 
     private fun initRV(){
-        resultDatas.addAll(resultDB.restaurantDao().alignPopular())
+        //resultDatas.addAll(resultDB.restaurantDao().alignPopular())
 
         binding.searchResultTv.text = intent.getStringExtra("Search_word").toString()
         binding.searchResultCountTv.text = intent.getStringExtra("Search_word").toString() + " 검색 결과 ("+ resultDatas.size.toString() + "건)"

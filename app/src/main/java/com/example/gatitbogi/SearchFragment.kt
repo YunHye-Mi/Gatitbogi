@@ -22,6 +22,20 @@ class SearchFragment : Fragment() {
     ): View? {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
 
+        restaurantDB = RecruitDatabase.getInstance(this.requireContext())!!
+
+        restaurantDatas.apply{
+            add(
+                Restaurant(R.drawable.ic_alarm_home,"카지츠","일식", 0F,
+                    "모둠꼬치 6종, 다양한 사케,...", "...", 500, 12, 2)
+            )
+
+            add(
+                Restaurant(R.drawable.ic_alarm_home,"산마루돌구이","기타", 4.37F,
+                    "산낙지돌구이(중), 산낙지볶음, 연포탕(중), 탕탕이,...", "...", 500, 28, 1)
+            )
+        }
+
         onClickListener()
 
         return binding.root
@@ -95,13 +109,11 @@ class SearchFragment : Fragment() {
     }
 
     private fun initRV(){
-        restaurantDatas.addAll(restaurantDB!!.restaurantDao().getRestaurant() as ArrayList<Restaurant>)
+        //restaurantDatas.addAll(restaurantDB!!.restaurantDao().getRestaurant() as ArrayList<Restaurant>)
         val restaurantRVAdapter = RestaurantResultRVAdapter(restaurantDatas)
 
         binding.searchLunchRv.adapter = restaurantRVAdapter
         binding.searchLunchRv.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
-
-        restaurantDatas.addAll(restaurantDB.restaurantDao().getRestaurant())
 
         restaurantRVAdapter.setMyItemClickListener(object: RestaurantResultRVAdapter.MyItemClickListener{
             override fun onItemClick(restaurant: Restaurant) {

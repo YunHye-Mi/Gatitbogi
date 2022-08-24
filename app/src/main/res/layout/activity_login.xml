@@ -5,17 +5,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+
     <TextView
         android:id="@+id/login_tv"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="94dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="같잇보기 로그인/회원가입"
         android:textSize="20sp"
         android:fontFamily="@font/suit_medium"
         android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_name_et"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    
+    <EditText
+        android:id="@+id/login_name_et"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:paddingHorizontal="12dp"
+        android:textColorHint="#797979"
+        android:textSize="14sp"
+        android:fontFamily="@font/suit_regular"
+        android:hint="name"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/rectangle_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_email_et"/>
+
+    <EditText
+        android:id="@+id/login_email_et"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:paddingHorizontal="12dp"
+        android:hint="email"
+        android:textColorHint="#797979"
+        android:textSize="14sp"
+        android:fontFamily="@font/suit_regular"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/rectangle_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_password_et"/>
+
+    <EditText
+        android:id="@+id/login_password_et"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:paddingHorizontal="12dp"
+        android:textColorHint="#797979"
+        android:textSize="14sp"
+        android:fontFamily="@font/suit_regular"
+        android:hint="pw"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/rectangle_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_continue_tv"/>
+
+    <TextView
+        android:id="@+id/login_continue_tv"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="계속하기"
+        android:fontFamily="@font/suit_regular"
+        android:textColor="@color/black"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/rectangle_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_or_tv"/>
+
+    <TextView
+        android:id="@+id/login_or_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="또는"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/suit_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/login_kakao_iv"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        android:src="@drawable/kakao_login_medium_wide"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/login_or_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

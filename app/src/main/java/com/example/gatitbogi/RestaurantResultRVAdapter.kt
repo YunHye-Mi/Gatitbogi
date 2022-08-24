@@ -1,9 +1,10 @@
 package com.example.gatitbogi
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gatitbogi.databinding.ItemRestaurantResultBinding
+import com.example.gatitbogi.databinding.ItemRestaurantRecruitBinding
 
 class RestaurantResultRVAdapter(private val restaurantList: ArrayList<Restaurant>): RecyclerView.Adapter<RestaurantResultRVAdapter.ViewHolder>(){
     interface MyItemClickListener{
@@ -21,7 +22,7 @@ class RestaurantResultRVAdapter(private val restaurantList: ArrayList<Restaurant
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantResultRVAdapter.ViewHolder {
-        var binding: ItemRestaurantResultBinding = ItemRestaurantResultBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        var binding: ItemRestaurantRecruitBinding = ItemRestaurantRecruitBinding.inflate(LayoutInflater.from(parent.context),parent,false)
 
         return ViewHolder(binding)
     }
@@ -33,10 +34,18 @@ class RestaurantResultRVAdapter(private val restaurantList: ArrayList<Restaurant
         holder.binding.itemRestaurantIv.setOnClickListener { myItemClickListner.onItemClick(restaurantList[position]) }
     }
 
-    inner class ViewHolder(val binding: ItemRestaurantResultBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemRestaurantRecruitBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(restaurant: Restaurant){
             binding.itemRestaurantNameTv.text = restaurant.name
-            binding.itemRestaurantRateTv.text = restaurant.rate.toString()
+            if(restaurant.rate == 0F){
+                binding.itemRestaurantRateTv.visibility = View.GONE
+                binding.itemRestaurantRateIv.visibility = View.GONE
+            }
+            else {
+                binding.itemRestaurantRateIv.visibility = View.VISIBLE
+                binding.itemRestaurantRateTv.visibility = View.VISIBLE
+                binding.itemRestaurantRateTv.text = restaurant.rate.toString()
+            }
             binding.itemDistanceTv.text = restaurant.distance.toString() + "M 이내"
             binding.itemSeatNumberTv.text = restaurant.seat.toString() + "인석"
             binding.itemRestaurantMenuTv.text = "대표메뉴: " + restaurant.menu

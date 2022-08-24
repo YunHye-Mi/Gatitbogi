@@ -123,6 +123,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/search_result_align_ll"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_restaurant_result" />
+        tools:listitem="@layout/item_restaurant_recruit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
